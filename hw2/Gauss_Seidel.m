@@ -1,12 +1,9 @@
-%% Gauss Seidel Method
-%% Solution of x in Ax=b using Gauss Seidel Method
-% * _*Initailize 'A' 'b' & intial guess 'x'*_
+% Solution of x in Ax=b using Gauss Seidel Method
+% Initailize 'A' 'b' & intial guess 'x'
 function T = Gauss_Seidel(A, x, b, n)
 
 normVal=Inf;
-% * _*Tolerence for method*_
 tol=1e-5; itr=0;
-%% Algorithm: Gauss Seidel Method
 while normVal>tol
     x_old=x;
     for i=1:n
@@ -22,6 +19,7 @@ while normVal>tol
     itr=itr+1;
     normVal=norm(x_old-x);
 end
+
 fprintf('Using Gauss Seidel method, solution of the system is: \n');
 disp(x);
 fprintf('in %d iterations\n', itr);
