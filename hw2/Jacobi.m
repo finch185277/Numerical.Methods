@@ -1,12 +1,9 @@
-%% Jacobi Method
-%% Solution of x in Ax=b using Jacobi Method
-% * _*Initailize 'A' 'b' & intial guess 'x'*_
+% Solution of x in Ax=b using Jacobi Method
+% Initailize 'A' 'b' & intial guess 'x'
 function T = Jacobi(A, x, b, n)
 
 normVal=Inf;
-% * _*Tolerence for method*_
 tol=1e-5; itr=0;
-%% Algorithm: Jacobi Method
 while normVal>tol
     xold=x;
     for i=1:n
@@ -21,6 +18,7 @@ while normVal>tol
     itr=itr+1;
     normVal=abs(xold-x);
 end
+
 fprintf('Using Jacobi method, solution of the system is: \n');
 disp(x);
 fprintf('in %d iterations\n', itr);
